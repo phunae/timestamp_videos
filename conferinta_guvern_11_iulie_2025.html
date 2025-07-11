@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conferință de Presă cu Navigare</title>
+    <style>
+        /* Stiluri generale pentru pagină și layout */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background-color: #f0f2f5;
+        }
+
+        /* Containerul principal, centrat pe pagină */
+        .main-container {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 15px;
+            box-sizing: border-box;
+        }
+
+        /* Secțiunea pentru video */
+        .video-section {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        
+        .video-section h1 {
+            font-size: 24px;
+            color: #1c1e21;
+            margin-bottom: 15px;
+        }
+
+        /* Stiluri pentru a face playerul video responsiv */
+        .video-responsive-wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.12);
+        }
+
+        .video-responsive-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Secțiunea pentru lista de timestamp-uri */
+        .timestamps-section {
+            background-color: #ffffff;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            max-height: 50vh;
+            overflow-y: auto;
+        }
+
+        .timestamps-section h3 {
+            margin-top: 0;
+            color: #333;
+            border-bottom: 1px solid #e0e0e0;
+            padding-bottom: 10px;
+        }
+
+        .timestamps-section ul {
+            list-style: none;
+            padding-left: 0;
+            margin: 0;
+        }
+
+        /* MODIFICARE #1: Am adăugat padding-left la TOATE elementele listei */
+        .timestamps-section li {
+            padding: 8px 0 8px 10px; /* Adaugă 10px spațiu la stânga */
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        .timestamps-section li:last-child {
+            border-bottom: none;
+        }
+        
+        /* MODIFICARE #2: Am ajustat padding-ul pentru a se alinia perfect */
+        .section-header {
+            font-weight: bold;
+            font-size: 16px;
+            color: #5c6ac4;
+            background-color: #f7f7f7;
+            margin: 0 -20px; 
+            padding: 8px 20px 8px 30px; /* Acum padding-ul este corect (20px de la container + 10px de la li) */
+            border-bottom: 1px solid #e0e0e0;
+            border-top: 1px solid #e0e0e0;
+        }
+        
+        .section-header:first-of-type {
+            margin-top: -10px;
+            border-top: none;
+        }
+
+        .timestamp-link {
+            text-decoration: none;
+            color: #065fd4;
+            font-weight: 500;
+            font-size: 14px;
+        }
+        
+        .timestamp-link-description {
+            font-size: 14px;
+            color: #555;
+        }
+
+        .timestamp-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="main-container">
+
+        <div class="video-section">
+            <h1>Conferinței de Presă a Premierului Ilie Bolojan | 11 Iulie 2025</h1>
+            <div class="video-responsive-wrapper">
+                <div id="player"></div>
+            </div>
+        </div>
+
+  <div class="timestamps-section">
+    <h3>Momente Cheie din Conferință</h3>
+    <ul>
+        <li class="section-header">Context General și Pachetul Fiscal-Bugetar</li>
+        <li><a href="#" class="timestamp-link" data-time="96">00:01:36</a><span class="timestamp-link-description"> - Pachet fiscal-bugetar pentru reducerea deficitului</span></li>
+        <li><a href="#" class="timestamp-link" data-time="154">00:02:34</a><span class="timestamp-link-description"> - Reacție pozitivă a piețelor financiare</span></li>
+        <li><a href="#" class="timestamp-link" data-time="186">00:03:06</a><span class="timestamp-link-description"> - Date: Economii de 200 mil. euro din dobânzi</span></li>
+        <li><a href="#" class="timestamp-link" data-time="257">00:04:17</a><span class="timestamp-link-description"> - Avertisment privind revenirea la măsuri populiste</span></li>
+        <li><a href="#" class="timestamp-link" data-time="288">00:04:48</a><span class="timestamp-link-description"> - Calendar: Noile pachete de reformă, la finalul lunii iulie</span></li>
+
+        <li class="section-header">Reforma Companiilor de Stat</li>
+        <li><a href="#" class="timestamp-link" data-time="306">00:05:06</a><span class="timestamp-link-description"> - Problema: Reforma companiilor de stat ineficiente</span></li>
+        <li><a href="#" class="timestamp-link" data-time="392">00:06:32</a><span class="timestamp-link-description"> - Măsură: Modificarea indicatorilor de performanță formali</span></li>
+        <li><a href="#" class="timestamp-link" data-time="470">00:07:50</a><span class="timestamp-link-description"> - Măsură: Plafonarea indemnizațiilor și reducerea conducerilor</span></li>
+        <li><a href="#" class="timestamp-link" data-time="604">00:10:04</a><span class="timestamp-link-description"> - Măsură: Reducerea numărului de companii gestionate central (AMEPIP)</span></li>
+        <li><a href="#" class="timestamp-link" data-time="777">00:12:57</a><span class="timestamp-link-description"> - Exemplu: Ineficiența băncilor de stat comparativ cu sectorul privat</span></li>
+        <li><a href="#" class="timestamp-link" data-time="858">00:14:18</a><span class="timestamp-link-description"> - Exemplu: Subvențiile excesive la CFR Călători (80%)</span></li>
+        
+        <li class="section-header">Reforma Fiscală și ANAF</li>
+        <li><a href="#" class="timestamp-link" data-time="959">00:15:59</a><span class="timestamp-link-description"> - Obiectiv: Prioritizarea încasării taxelor existente</span></li>
+        <li><a href="#" class="timestamp-link" data-time="1016">00:16:56</a><span class="timestamp-link-description"> - Critică: Lipsa de entuziasm pentru digitalizarea ANAF</span></li>
+        <li><a href="#" class="timestamp-link" data-time="1094">00:18:14</a><span class="timestamp-link-description"> - Măsură: Reforma conducerii ANAF - limitarea mandatelor și obiective clare</span></li>
+
+        <li class="section-header">Reducerea Risipei în Sistemul de Sănătate</li>
+        <li><a href="#" class="timestamp-link" data-time="1261">00:21:01</a><span class="timestamp-link-description"> - Problema: Creșterea nesustenabilă a cheltuielilor cu sănătatea</span></li>
+        <li><a href="#" class="timestamp-link" data-time="1324">00:22:04</a><span class="timestamp-link-description"> - Date: Explozia bugetului sănătății (49 mld. în 2021 -> 73+ mld. în 2024)</span></li>
+        <li><a href="#" class="timestamp-link" data-time="1660">00:27:40</a><span class="timestamp-link-description"> - Mecanism de risipă: Inflarea decontărilor prin indicatori de complexitate (ICM)</span></li>
+        <li><a href="#" class="timestamp-link" data-time="1746">00:29:06</a><span class="timestamp-link-description"> - Mecanism de risipă: Utilizarea excesivă a medicamentelor inovative scumpe</span></li>
+        
+        <li class="section-header">Reforma Administrației și a Pensiilor Speciale</li>
+        <li><a href="#" class="timestamp-link" data-time="2005">00:33:25</a><span class="timestamp-link-description"> - Măsură: Descentralizarea autorizării jocurilor de noroc către primării</span></li>
+        <li><a href="#" class="timestamp-link" data-time="2100">00:35:00</a><span class="timestamp-link-description"> - Măsură: Normarea personalului din administrația locală</span></li>
+        <li><a href="#" class="timestamp-link" data-time="2177">00:36:17</a><span class="timestamp-link-description"> - Justificare: Majoritatea primăriilor nu se pot auto-finanța</span></li>
+        <li><a href="#" class="timestamp-link" data-time="2281">00:38:01</a><span class="timestamp-link-description"> - Măsură: Reforma pensiilor speciale pentru magistrați (vârstă și calcul)</span></li>
+        <li><a href="#" class="timestamp-link" data-time="2476">00:41:16</a><span class="timestamp-link-description"> - Clarificare: Cum ajunge pensia să fie egală cu ultimul salariu</span></li>
+        <li><a href="#" class="timestamp-link" data-time="2615">00:43:35</a><span class="timestamp-link-description"> - Nuanțare: Clauză tranzitorie pentru a evita plecările din sistem</span></li>
+        
+        <li class="section-header">Sesiune Q&A - Întrebări și Răspunsuri</li>
+        <li><a href="#" class="timestamp-link" data-time="2717">00:45:17</a><span class="timestamp-link-description"> - Întrebare (Kanal D): Reducerea numărului de parlamentari la 300</span></li>
+        <li><a href="#" class="timestamp-link" data-time="2739">00:45:39</a><span class="timestamp-link-description"> - Răspuns: Susținere personală, dar fără acord în coaliție momentan</span></li>
+        <li><a href="#" class="timestamp-link" data-time="2798">00:46:38</a><span class="timestamp-link-description"> - Întrebare (Digi24): Reducerea personalului și comasarea primăriilor</span></li>
+        <li><a href="#" class="timestamp-link" data-time="2893">00:48:13</a><span class="timestamp-link-description"> - Răspuns: Comasarea este un subiect pentru 2026-2027, cu aplicare din 2028</span></li>
+        <li><a href="#" class="timestamp-link" data-time="3050">00:50:50</a><span class="timestamp-link-description"> - Întrebare (România TV): Riscul unor noi taxe sau majorări de TVA în octombrie</span></li>
+        <li><a href="#" class="timestamp-link" data-time="3165">00:52:45</a><span class="timestamp-link-description"> - Răspuns: Evitarea unui "NU" ferm, condiționând de disciplina fiscală</span></li>
+        <li><a href="#" class="timestamp-link" data-time="3223">00:53:43</a><span class="timestamp-link-description"> - Întrebare (TVR): Orizontul de timp pentru reforma companiilor de stat</span></li>
+        <li><a href="#" class="timestamp-link" data-time="3285">00:54:45</a><span class="timestamp-link-description"> - Răspuns: Măsurile vor fi aprobate în august, cu efecte treptate</span></li>
+        <li><a href="#" class="timestamp-link" data-time="3410">00:56:50</a><span class="timestamp-link-description"> - Întrebare (Antena 3): Solidaritatea socială și criticile din partea PSD</span></li>
+        <li><a href="#" class="timestamp-link" data-time="3437">00:57:17</a><span class="timestamp-link-description"> - Răspuns: Evaziv privind reducerea propriului salariu; diplomatic la adresa PSD</span></li>
+        <li><a href="#" class="timestamp-link" data-time="3572">00:59:32</a><span class="timestamp-link-description"> - Întrebare (Euronews): Viitorul companiei TAROM - privatizare?</span></li>
+        <li><a href="#" class="timestamp-link" data-time="3593">00:59:53</a><span class="timestamp-link-description"> - Răspuns: Critică managementul trecut, dar fără un angajament clar privind privatizarea</span></li>
+        <li><a href="#" class="timestamp-link" data-time="3693">01:01:33</a><span class="timestamp-link-description"> - Întrebare (Gândul): Măsuri referitoare la taxarea multinaționalelor</span></li>
+        <li><a href="#" class="timestamp-link" data-time="3703">01:01:43</a><span class="timestamp-link-description"> - Răspuns: Toate companiile trebuie să plătească taxe corecte, focus pe prețurile de transfer</span></li>
+        <li><a href="#" class="timestamp-link" data-time="3821">01:03:41</a><span class="timestamp-link-description"> - Întrebare (Agerpres): Tăierea sporurilor personalului medical</span></li>
+        <li><a href="#" class="timestamp-link" data-time="3853">01:04:13</a><span class="timestamp-link-description"> - Răspuns: Nu se taie sporuri; managerii trebuie să le acorde în funcție de performanță</span></li>
+        <li><a href="#" class="timestamp-link" data-time="3996">01:06:36</a><span class="timestamp-link-description"> - Întrebare (Explicativ): Măsuri la ANAF și rolul serviciilor de informații</span></li>
+        <li><a href="#" class="timestamp-link" data-time="4034">01:07:14</a><span class="timestamp-link-description"> - Răspuns: Controalele trebuie bazate pe analize de risc, nu pe interese</span></li>
+        <li><a href="#" class="timestamp-link" data-time="4226">01:10:26</a><span class="timestamp-link-description"> - Întrebare (Bloomberg): Ținta realistă de deficit bugetar pentru 2025</span></li>
+        <li><a href="#" class="timestamp-link" data-time="4264">01:11:04</a><span class="timestamp-link-description"> - Răspuns: Ținta nu poate fi 7%; se lucrează pentru "în jur de 8%"</span></li>
+        <li><a href="#" class="timestamp-link" data-time="4383">01:13:03</a><span class="timestamp-link-description"> - Întrebare (Antena 1): Calculul impozitului pe proprietate și taxa auto</span></li>
+        <li><a href="#" class="timestamp-link" data-time="4503">01:15:03</a><span class="timestamp-link-description"> - Răspuns: Impozitul va reflecta valoarea de piață; taxa auto e jalon PNRR</span></li>
+        <li><a href="#" class="timestamp-link" data-time="4695">01:18:15</a><span class="timestamp-link-description"> - Răspuns: Reforma pensiilor va fi temeinică pentru a rezista la Curtea Constituțională</span></li>
+    </ul>
+</div>
+
+    </div>
+
+    <script>
+        var tag = document.createElement('script');
+        tag.src = "https://www.youtube.com/iframe_api";
+        var firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+        var player;
+
+        function onYouTubeIframeAPIReady() {
+            player = new YT.Player('player', {
+                height: '100%',
+                width: '100%',
+                videoId: 'pLfNgVdhuyY',
+                playerVars: { 'playsinline': 1 },
+                events: { 'onReady': onPlayerReady }
+            });
+        }
+
+        function onPlayerReady(event) {
+            attachTimestampLinks();
+        }
+
+        function attachTimestampLinks() {
+            const links = document.querySelectorAll('.timestamp-link');
+            links.forEach(link => {
+                link.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    const time = this.dataset.time;
+                    if (player && typeof player.seekTo === 'function') {
+                        player.seekTo(time, true);
+                    }
+                });
+            });
+        }
+    </script>
+
+</body>
+</html>
